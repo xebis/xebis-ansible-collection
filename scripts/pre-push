@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+LANG=C
+
+# shellcheck source=./shellib/shellib.sh
+. "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/shellib/shellib.sh"
+
+# Check pushed codebase changes or without arguments the whole codebase
+function run_pre_commit() {
+    # Skip GitLab CI Linter if GitLab Personal Access Token is not set
+    if [ -z "${GL_TOKEN:-}" ]; then
+        if [ -z "${SKIP:-}" ]; then
+            export SKIP=gitlab-ci-linter
+        else
+            export SKIP="$SKIP,gitlab-ci-linter"
+        fi
+    else
+        export GITLAB_PRIVATE_TOKEN="$GL_TOKEN"
+    fi
+
+    pre-commit hook-impl --hook-type=pre-push --config=.pre-commit-config.yaml --hook-dir "$(cd "$(dirname "$0")" && pwd)" -- "$@"
+}
+
+# Skip execution if under test
+if [ "${BASH_SOURCE[0]}" == "${0}" ]; then
+    run_pre_commit "$@"
+    scripts/test tests/reduced.set
+fi

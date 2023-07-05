@@ -1,0 +1,92 @@
+---
+# cSpell:ignore pygrep
+default_stages: [commit, manual, merge-commit, push]
+repos:
+  - repo: https://github.com/jorisroovers/gitlint
+    rev: v0.19.1
+    hooks:
+      - id: gitlint
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=1024]
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-vcs-permalinks
+      - id: destroyed-symlinks
+      - id: detect-private-key
+      - id: end-of-file-fixer
+        exclude: .*\.drawio$
+      - id: fix-byte-order-marker
+      - id: forbid-new-submodules
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: no-commit-to-branch
+      - id: pretty-format-json
+        args: [--no-ensure-ascii]
+      - id: trailing-whitespace
+  - repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 3.0.0
+    hooks:
+      - id: check-mailmap
+      - id: forbid-binary
+        exclude: .*\.png$
+      - id: git-check
+      - id: git-dirty
+      - id: protect-first-parent
+      - id: script-must-have-extension
+        exclude: .*\.bats$
+      - id: script-must-not-have-extension
+  - repo: meta
+    hooks:
+      - id: check-hooks-apply
+        stages: [manual]
+      - id: check-useless-excludes
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.5
+    hooks:
+      - id: codespell
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.35.0
+    hooks:
+      - id: markdownlint
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.32.0
+    hooks:
+      - id: yamllint
+        args: [--strict]
+  - repo: https://gitlab.com/devopshq/gitlab-ci-linter
+    rev: v1.0.3
+    hooks:
+      - id: gitlab-ci-linter
+  - repo: local
+    hooks:
+      - id: anti-todo
+        name: anti-todo
+        entry: (?i)#\s*\b(wip|todo|tbd)\b
+        language: pygrep
+        types: [text]
+        stages: [manual]
+      - id: shfmt
+        name: shfmt
+        entry: shfmt -i 4
+        language: system
+        types: [shell]
+      - id: shfmt-bats
+        name: shfmt-bats
+        entry: shfmt -ln bats -i 4
+        language: system
+        files: .*\.bats$
+      - id: shellcheck
+        name: shellcheck
+        entry: shellcheck -x -P scripts:scripts/shellib
+        language: system
+        types: [shell]
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.17.0
+    hooks:
+      - id: gitleaks
