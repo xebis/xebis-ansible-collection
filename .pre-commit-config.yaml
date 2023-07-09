@@ -20,7 +20,6 @@ repos:
       - id: destroyed-symlinks
       - id: detect-private-key
       - id: end-of-file-fixer
-        exclude: .*\.drawio$
       - id: fix-byte-order-marker
       - id: forbid-new-submodules
       - id: mixed-line-ending
@@ -34,7 +33,6 @@ repos:
     hooks:
       - id: check-mailmap
       - id: forbid-binary
-        exclude: .*\.png$
       - id: git-check
       - id: git-dirty
       - id: protect-first-parent
@@ -70,7 +68,7 @@ repos:
         entry: (?i)#\s*\b(wip|todo|tbd)\b
         language: pygrep
         types: [text]
-        stages: [manual]
+        stages: [push, manual]
       - id: shfmt
         name: shfmt
         entry: shfmt -i 4
@@ -90,3 +88,12 @@ repos:
     rev: v8.17.0
     hooks:
       - id: gitleaks
+  - repo: https://github.com/ansible-community/ansible-lint
+    rev: v6.17.2
+    hooks:
+      - id: ansible-lint
+        args: [-c, .ansible-lint.yml]
+  - repo: https://github.com/bridgecrewio/checkov.git
+    rev: 2.3.302
+    hooks:
+      - id: checkov

@@ -2,3 +2,5 @@ pre-commit
 gitlint
 codespell
 yamllint
+checkov
+ansible-lint
