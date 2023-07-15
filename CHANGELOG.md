@@ -1,3 +1,11 @@
+# [0.1.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.0.0...v0.1.0) (2023-07-15)
+
+
+### Features
+
+* add infrastructure-template ansible related template code ([a95bab2](https://gitlab.com/xebis/xebis-ansible-collection/commit/a95bab2686f9c78a5b8e78a9ebf3b568dc264072))
+* add repository-template ([c5fb908](https://gitlab.com/xebis/xebis-ansible-collection/commit/c5fb9080b5f06ffb549dc43e317d412394aa4835))
+
 # [0.28.0](https://gitlab.com/xebis/repository-template/compare/v0.27.1...v0.28.0) (2023-06-24)
 
 
