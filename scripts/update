@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+LANG=C
+
+# shellcheck source=./shellib/shellib.sh
+. "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/shellib/shellib.sh"
+
+# Update repository pre-commit
+function update_pre_commit {
+    pre-commit autoupdate
+    pre-commit gc
+}
+
+# Update repository submodules
+function update_git_submodules() {
+    git submodule update --remote --merge
+}
+
+# Skip execution under test
+if [ "${BASH_SOURCE[0]}" == "${0}" ]; then
+    update_pre_commit
+    update_git_submodules
+fi

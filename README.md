@@ -1,92 +1,153 @@
+<!-- omit in toc -->
 # Xebis Ansible Collection
 
+![GitHub top language](https://img.shields.io/github/languages/top/xebis/xebis-ansible-collection)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
+![GitHub](https://img.shields.io/github/license/xebis/xebis-ansible-collection)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/xebis/xebis-ansible-collection)
+![GitHub issues](https://img.shields.io/github/issues/xebis/xebis-ansible-collection)
+![GitHub last commit](https://img.shields.io/github/last-commit/xebis/xebis-ansible-collection)
+[![pipeline status](https://gitlab.com/xebis/xebis-ansible-collection/badges/main/pipeline.svg?ignore_skipped=true)](https://gitlab.com/xebis/xebis-ansible-collection/-/commits/main)
 
-## Getting started
+A collection of Xebis shared Ansible roles.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+**The project is under active development.**
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+<!-- omit in toc -->
+## Table of Contents
 
-## Add your files
+- [Features](#features)
+- [Installation and Configuration](#installation-and-configuration)
+- [Usage](#usage)
+- [Contributing](#contributing)
+  - [Testing](#testing)
+    - [Test at Docker Container](#test-at-docker-container)
+- [Credits and Acknowledgments](#credits-and-acknowledgments)
+- [Copyright and Licensing](#copyright-and-licensing)
+- [Changelog and News](#changelog-and-news)
+- [Notes and References](#notes-and-references)
+  - [Dependencies](#dependencies)
+  - [Recommendations](#recommendations)
+  - [Suggestions](#suggestions)
+  - [Further Reading](#further-reading)
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+## Features
 
+No features yet.
+
+## Installation and Configuration
+
+Install the collection using `ansible-galaxy collection install git@gitlab.com/xebis/xebis-ansible-collection.git`, or you can use `requirements.yml` and install it with `ansible-galaxy install -r requirements.yml`:
+
+```yaml
+collections:
+  - git@gitlab.com/xebis/xebis-ansible-collection.git
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/xebis/xebis-ansible-collection.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.com/xebis/xebis-ansible-collection/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
 
 ## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+In an Ansible playbook:
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+```yaml
+  roles:
+    - role: xebis.ansible.role
+```
 
 ## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+Please read [CONTRIBUTING](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting merge requests to us.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+### Testing
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+- Git hooks check a lot of things for you, including running automated tests `scripts/test full`
+- Make sure all `scripts/*`, git hooks, and GitLab pipelines work as expected, testing checklist:
 
-## License
-For open source projects, say how it is licensed.
+- `scripts/*` scripts - covered by unit tests `tests/*`
+  - [ ] [`scripts/bootstrap`](scripts/bootstrap)
+  - [ ] [`scripts/pre-commit`](scripts/pre-commit)
+  - [ ] [`scripts/pre-push`](scripts/pre-push)
+  - [ ] [`scripts/secrets.sh`](scripts/secrets.sh)
+  - [ ] [`scripts/setup`](scripts/setup)
+  - [ ] [`scripts/test`](scripts/test)
+  - [ ] [`scripts/update`](scripts/update)
+- Local working directory
+  - [ ] `git commit` runs `pre-commit` hook-type `commit-msg` and [`scripts/pre-commit`](scripts/pre-commit)
+  - [ ] `git merge`
+    - [ ] Fast-forward shouldn't run any hooks or scripts
+    - [ ] Automatically resolved `merge commit` runs `pre-commit` hook-type `commit-msg` and [`scripts/pre-commit`](scripts/pre-commit)
+    - [ ] Manually resolved `merge commit` runs `pre-commit` hook-type `commit-msg` and [`scripts/pre-commit`](scripts/pre-commit)
+  - [ ] `git push` runs [`scripts/pre-push`](scripts/pre-push)
+  - [ ] `pre-commit run -a --hook-stage manual` runs all hooks and `check-hooks-apply` hook fails on `check-symlinks` and `forbid-binary`
+- GitLab CI
+  - [ ] Commit in _non_-`main` branch runs `validate:lint` and `validate:test-full`
+  - [ ] Merge to `main` branch runs `validate:lint`, `validate:test-full`, and `release:release`
+    - [ ] With a new `feat` or `fix` commit releases a new version
+    - [ ] Without a new feature or fix commit does not release a new version
+  - [ ] Scheduled (nightly) pipeline runs `validate:lint` and `validate:test-nightly`
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+#### Test at Docker Container
+
+To test your changes in a different environment, you might try to run a Docker container and test it from there.
+
+Run the container:
+
+```bash
+sudo docker run -it --rm -v "$(pwd)":/repository-template alpine:latest # Create disposal docker container
+```
+
+In the container:
+
+```bash
+cd repository-template
+# Set variables GL_TOKEN and GH_TOKEN when needed
+# Put here commands from .gitlab-ci.yml job:before_script and job:script
+# For example job test-full:
+apk -U upgrade
+apk add bats
+bats tests
+# Result is similar to:
+# 1..1
+# ok 1 dummy test
+```
+
+## Credits and Acknowledgments
+
+- [Martin Bružina](https://bruzina.cz/) - Author
+
+## Copyright and Licensing
+
+- [MIT License](LICENSE)
+- Copyright © 2023 Martin Bružina
+
+## Changelog and News
+
+- [Changelog](../CHANGELOG.md)
+
+## Notes and References
+
+### Dependencies
+
+- [Ansible](https://www.ansible.com/)
+  - [GitHub - ansible-community/ansible-lint: Best practices checker for Ansible](https://github.com/ansible-community/ansible-lint)
+- [checkov](https://www.checkov.io/)
+- [GitHub - xebis/repository-template: Well-manageable and well-maintainable repository template.](https://github.com/xebis/repository-template) - contains GitLab CI/CD, set of useful scripts, `pre-commit`, `semantic-release`, and `Visual Studio Code` suggested extensions
+
+### Recommendations
+
+- [GitHub - KeyboardInterrupt/awesome-ansible: Awesome Ansible List](https://github.com/KeyboardInterrupt/awesome-ansible)
+- [Shields.io: Quality metadata badges for open source projects](https://shields.io/)
+
+### Suggestions
+
+- [Visual Studio Code](https://code.visualstudio.com/) with [Extensions for Visual Studio Code](https://marketplace.visualstudio.com/VSCode):
+  - [Ansible](https://marketplace.visualstudio.com/items?itemName=redhat.ansible) - includes potentially unwanted extensions [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) (Ansible dependency) and [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) (could be uninstalled)
+
+### Further Reading
+
+_List further reading links here, or delete the section._
+
+- [Wikipedia: README](https://en.wikipedia.org/wiki/README)
+- [Make a README: Because no one can read your mind (yet)](https://www.makeareadme.com/)
