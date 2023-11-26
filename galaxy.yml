@@ -1,0 +1,17 @@
+---
+namespace: xebis
+name: ansible
+version: 0.2.0
+readme: README.md
+authors:
+  - Martin Bružina <https://bruzina.cz/>
+description: A collection of Xebis shared Ansible roles.
+license:
+  - MIT
+tags: [linux]
+dependencies: { }
+repository: https://github.com/xebis/xebis-ansible-collection
+documentation: https://github.com/xebis/xebis-ansible-collection
+homepage: https://github.com/xebis/xebis-ansible-collection
+issues: https://github.com/xebis/xebis-ansible-collection/issues
+build_ignore: []
