@@ -20,9 +20,11 @@ A collection of Xebis shared Ansible roles.
 ## Table of Contents
 
 - [Features](#features)
+  - [Supported OS](#supported-os)
 - [Installation and Configuration](#installation-and-configuration)
 - [Usage](#usage)
 - [Contributing](#contributing)
+  - [Development](#development)
   - [Testing](#testing)
     - [Test at Docker Container](#test-at-docker-container)
 - [Credits and Acknowledgments](#credits-and-acknowledgments)
@@ -36,15 +38,21 @@ A collection of Xebis shared Ansible roles.
 
 ## Features
 
-No features yet.
+Ansible roles:
+
+- [`xebis.ansible.system`](roles/system): to keep operating system well maintained - updates and upgrades deb packages including autoremove and autoclean, reboots the system (when necessary)
+
+### Supported OS
+
+`Ubuntu Server 22.04` and `Kubuntu 22.04` are supported.
 
 ## Installation and Configuration
 
-Install the collection using `ansible-galaxy collection install git@gitlab.com/xebis/xebis-ansible-collection.git`, or you can use `requirements.yml` and install it with `ansible-galaxy install -r requirements.yml`:
+Install the collection using `ansible-galaxy collection install git@github.com/xebis/xebis-ansible-collection.git`, or you can use `requirements.yml` and install it with `ansible-galaxy install -r requirements.yml`:
 
 ```yaml
 collections:
-  - git@gitlab.com/xebis/xebis-ansible-collection.git
+  - git@github.com/xebis/xebis-ansible-collection.git
 ```
 
 ## Usage
@@ -59,6 +67,15 @@ In an Ansible playbook:
 ## Contributing
 
 Please read [CONTRIBUTING](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting merge requests to us.
+
+### Development
+
+Local collection testing:
+
+```bash
+ansible-galaxy collection build --force # Outputs collection build file
+ansible-galaxy collection install --force /path/to/xebis-ansible-collection/xebis-ansible-version.tar.gz
+```
 
 ### Testing
 

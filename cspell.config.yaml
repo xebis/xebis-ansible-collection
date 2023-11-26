@@ -7,13 +7,17 @@ dictionaries:
   - bash
   - words
 words:
+  - autoremove
+  - autoclean
   - Bružina
   - codespell
   - Coreutils
   - drawio
   - gitleaks
   - gitlint
+  - Kubuntu
   - markdownlint
+  - Pylance
   - roadmap
   - shellib
   - Xebis
