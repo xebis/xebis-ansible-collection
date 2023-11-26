@@ -1,3 +1,10 @@
+# [0.2.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.1.0...v0.2.0) (2023-11-26)
+
+
+### Features
+
+* add galaxy configuration and the system role stub ([275a9ce](https://gitlab.com/xebis/xebis-ansible-collection/commit/275a9ce6aa78fbe159067b1233217fefc2ab4829))
+
 # [0.1.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.0.0...v0.1.0) (2023-07-15)
 
 
