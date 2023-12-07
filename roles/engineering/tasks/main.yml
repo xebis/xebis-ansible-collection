@@ -1,0 +1,16 @@
+---
+- name: Install engineering deb packages
+  become: true
+  ansible.builtin.apt:
+    name:
+      - direnv
+    state: present
+
+- name: Set up direnv
+  ansible.builtin.blockinfile:
+    path: ~/.bashrc
+    block: |
+      eval "$(direnv hook bash)"
+    marker: "# {mark} direnv configuration"
+    create: true
+    mode: u=rw,g=,o=
