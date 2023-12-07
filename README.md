@@ -40,8 +40,9 @@ A collection of Xebis shared Ansible roles.
 
 Ansible roles:
 
-- [`xebis.ansible.system`](roles/system): well maintained operating system - updates and upgrades deb packages including autoremove and autoclean, reboots the system (when necessary)
-- [`xebis.ansible.engineering`](roles/engineering): engineering essentials - installs and set ups direnv
+- [`xebis.ansible.system`](roles/system): well maintained operating system - updates and upgrades `deb` packages including autoremove and autoclean, reboots the system (when necessary), provides `Reboot machine` handler
+- [`xebis.ansible.system_management`](roles/system_management): operating system management essential - installs and set ups `at`
+- [`xebis.ansible.engineering`](roles/engineering): engineering essentials - installs and set ups `direnv`
 
 ### Supported OS
 
