@@ -1,3 +1,17 @@
+# [0.3.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.2.0...v0.3.0) (2023-12-7)
+
+
+### Bug Fixes
+
+* add missing engineering dependency ([ee89349](https://gitlab.com/xebis/xebis-ansible-collection/commit/ee8934987a21041d87bb580dd58965482650f7ec))
+
+
+### Features
+
+* add engineering essentials role stub with direnv ([ed370c2](https://gitlab.com/xebis/xebis-ansible-collection/commit/ed370c2d211e85fdcfc7b334095f3ce0ef003a2b))
+* add galaxy.yml automatic version replacement ([3d8c027](https://gitlab.com/xebis/xebis-ansible-collection/commit/3d8c02750403f3e02c404325bd1a943335712278))
+* add system management role ([c44616d](https://gitlab.com/xebis/xebis-ansible-collection/commit/c44616da80d5342d7b76d487321b9ccaca6e1fdf))
+
 # [0.2.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.1.0...v0.2.0) (2023-11-26)
 
 
