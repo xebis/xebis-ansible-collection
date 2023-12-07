@@ -1,0 +1,3 @@
+---
+dependencies:
+  - role: xebis.ansible.system # Expects updated and upgraded system
