@@ -12,6 +12,11 @@ plugins:
   - "@semantic-release/commit-analyzer"
   - "@semantic-release/release-notes-generator"
   - "@semantic-release/changelog"
-  - "@semantic-release/git"
+  - - "@semantic-release/exec"
+    - prepareCmd: "sed -i 's/version: .*/version: ${nextRelease.version}/' 'galaxy.yml'"
+  - - "@semantic-release/git"
+    - assets:
+        - CHANGELOG.md
+        - galaxy.yml
   - "@semantic-release/gitlab"
   - "@semantic-release/github"
