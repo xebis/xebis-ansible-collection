@@ -111,16 +111,15 @@ ansible-galaxy collection install --force /path/to/xebis-ansible-collection/xebi
 
 To test your changes in a different environment, you might try to run a Docker container and test it from there.
 
-Run the container:
+Run a disposal Docker container:
 
-```bash
-sudo docker run -it --rm -v "$(pwd)":/repository-template alpine:latest # Create disposal docker container
-```
+- `sudo docker run -it --rm -v "$(pwd)":/xebis-ansible-collection alpine:latest`
+- `sudo docker run -it --rm -v "$(pwd)":/xebis-ansible-collection --entrypoint sh node:alpine`
 
 In the container:
 
 ```bash
-cd repository-template
+cd xebis-ansible-collection
 # Set variables GL_TOKEN and GH_TOKEN when needed
 # Put here commands from .gitlab-ci.yml job:before_script and job:script
 # For example job test-full:
