@@ -20,6 +20,7 @@ A collection of Xebis shared Ansible roles.
 ## Table of Contents
 
 - [Features](#features)
+  - [Ansible Roles](#ansible-roles)
   - [Supported OS](#supported-os)
 - [Installation and Configuration](#installation-and-configuration)
 - [Usage](#usage)
@@ -38,11 +39,14 @@ A collection of Xebis shared Ansible roles.
 
 ## Features
 
-Ansible roles:
+### Ansible Roles
 
-- [`xebis.ansible.system`](roles/system): well maintained operating system - updates and upgrades `deb` packages including autoremove and autoclean, reboots the system (when necessary), provides `Reboot machine` handler
-- [`xebis.ansible.system_management`](roles/system_management): operating system management essential - installs and set ups `at`
-- [`xebis.ansible.engineering`](roles/engineering): engineering essentials - installs and set ups `direnv`
+| Role | Description | Documentation | Dependencies |
+|---|---|---|---|
+| [`xebis.ansible.system`](roles/system) | Well maintained operating system | Updates and upgrades `deb` packages including autoremove and autoclean, reboots the system (when necessary), provides `Reboot machine` handler |
+| [`xebis.ansible.system_management`](roles/system_management) | Operating system management essentials | Installs and set ups `at` | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.firewall`](roles/firewall) | Extensible nftables firewall | Installs `nftables` and sets up basic extensible nftables chains and rules, provides `Reload nftables` handler, see [README.md](roles/firewall/README.md) for usage, configuration, and examples | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.engineering`](roles/engineering) | Engineering essentials | Installs and set ups `direnv` | [`xebis.ansible.system`](roles/system) |
 
 ### Supported OS
 
@@ -88,7 +92,6 @@ ansible-galaxy collection install --force /path/to/xebis-ansible-collection/xebi
   - [ ] [`scripts/bootstrap`](scripts/bootstrap)
   - [ ] [`scripts/pre-commit`](scripts/pre-commit)
   - [ ] [`scripts/pre-push`](scripts/pre-push)
-  - [ ] [`scripts/secrets.sh`](scripts/secrets.sh)
   - [ ] [`scripts/setup`](scripts/setup)
   - [ ] [`scripts/test`](scripts/test)
   - [ ] [`scripts/update`](scripts/update)
@@ -111,16 +114,15 @@ ansible-galaxy collection install --force /path/to/xebis-ansible-collection/xebi
 
 To test your changes in a different environment, you might try to run a Docker container and test it from there.
 
-Run the container:
+Run a disposal Docker container:
 
-```bash
-sudo docker run -it --rm -v "$(pwd)":/repository-template alpine:latest # Create disposal docker container
-```
+- `sudo docker run -it --rm -v "$(pwd)":/xebis-ansible-collection alpine:latest`
+- `sudo docker run -it --rm -v "$(pwd)":/xebis-ansible-collection --entrypoint sh node:alpine`
 
 In the container:
 
 ```bash
-cd repository-template
+cd xebis-ansible-collection
 # Set variables GL_TOKEN and GH_TOKEN when needed
 # Put here commands from .gitlab-ci.yml job:before_script and job:script
 # For example job test-full:
