@@ -1,3 +1,10 @@
+# [0.4.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.3.0...v0.4.0) (2023-12-9)
+
+
+### Features
+
+* add firewall role ([32b5966](https://gitlab.com/xebis/xebis-ansible-collection/commit/32b596635bf5ff59b6af95820abdd87cc026e260))
+
 # [0.3.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.2.0...v0.3.0) (2023-12-7)
 
 
