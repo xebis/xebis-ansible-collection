@@ -92,7 +92,6 @@ ansible-galaxy collection install --force /path/to/xebis-ansible-collection/xebi
   - [ ] [`scripts/bootstrap`](scripts/bootstrap)
   - [ ] [`scripts/pre-commit`](scripts/pre-commit)
   - [ ] [`scripts/pre-push`](scripts/pre-push)
-  - [ ] [`scripts/secrets.sh`](scripts/secrets.sh)
   - [ ] [`scripts/setup`](scripts/setup)
   - [ ] [`scripts/test`](scripts/test)
   - [ ] [`scripts/update`](scripts/update)
