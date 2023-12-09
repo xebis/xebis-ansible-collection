@@ -20,6 +20,7 @@ A collection of Xebis shared Ansible roles.
 ## Table of Contents
 
 - [Features](#features)
+  - [Ansible Roles](#ansible-roles)
   - [Supported OS](#supported-os)
 - [Installation and Configuration](#installation-and-configuration)
 - [Usage](#usage)
@@ -38,11 +39,14 @@ A collection of Xebis shared Ansible roles.
 
 ## Features
 
-Ansible roles:
+### Ansible Roles
 
-- [`xebis.ansible.system`](roles/system): well maintained operating system - updates and upgrades `deb` packages including autoremove and autoclean, reboots the system (when necessary), provides `Reboot machine` handler
-- [`xebis.ansible.system_management`](roles/system_management): operating system management essential - installs and set ups `at`
-- [`xebis.ansible.engineering`](roles/engineering): engineering essentials - installs and set ups `direnv`
+| Role | Description | Documentation | Dependencies |
+|---|---|---|---|
+| [`xebis.ansible.system`](roles/system) | Well maintained operating system | Updates and upgrades `deb` packages including autoremove and autoclean, reboots the system (when necessary), provides `Reboot machine` handler |
+| [`xebis.ansible.system_management`](roles/system_management) | Operating system management essentials | Installs and set ups `at` | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.firewall`](roles/firewall) | Extensible nftables firewall | Installs `nftables` and sets up basic extensible nftables chains and rules, provides `Reload nftables` handler, see [README.md](roles/firewall/README.md) for usage, configuration, and examples | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.engineering`](roles/engineering) | Engineering essentials | Installs and set ups `direnv` | [`xebis.ansible.system`](roles/system) |
 
 ### Supported OS
 
