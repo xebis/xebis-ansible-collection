@@ -44,10 +44,11 @@ A collection of Xebis shared Ansible roles.
 | Role | Description | Documentation | Dependencies |
 |---|---|---|---|
 | [`xebis.ansible.system`](roles/system) | Well maintained operating system | Updates and upgrades `deb` packages including autoremove and autoclean, reboots the system (when necessary), provides `Reboot machine` handler |
-| [`xebis.ansible.system_management`](roles/system_management) | Operating system management essentials | Installs and set ups `at` | [`xebis.ansible.system`](roles/system) |
-| [`xebis.ansible.firewall`](roles/firewall) | Extensible nftables firewall | Installs `nftables` and sets ups basic extensible nftables chains and rules, provides `Reload nftables` handler, see [README.md](roles/firewall/README.md) for usage, configuration, and examples | [`xebis.ansible.system`](roles/system) |
-| [`xebis.ansible.physical`](roles/physical) | Physical machine essentials | Installs `hwinfo`, set ups to show GRUB menu with 3s timeout, and set ups `/tmp` in tmpfs | [`xebis.ansible.system`](roles/system) |
-| [`xebis.ansible.engineering`](roles/engineering) | Engineering essentials | Installs and set ups `direnv` | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.system_management`](roles/system_management) | Operating system management essentials | Installs and sets up `at` | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.firewall`](roles/firewall) | Extensible nftables firewall | Installs `nftables` and sets up basic extensible nftables chains and rules, provides `Reload nftables` handler, see [README.md](roles/firewall/README.md) for usage, configuration, and examples | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.physical`](roles/physical) | Physical machine essentials | Installs `hwinfo`, sets up to show GRUB menu with 3s timeout, and sets up `/tmp` in tmpfs | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.engineering`](roles/engineering) | Engineering essentials | Installs and sets up `direnv` | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.kde`](roles/kde/) | KDE essentials | Installs `krusader` (including recommended dependencies `kdiff3`, `kget`, and `krename`), `kwin-bismuth`, sets up `nftables` firewall for KDE, and provides `Plasma Reload` desktop icon | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
 
 ### Supported OS
 

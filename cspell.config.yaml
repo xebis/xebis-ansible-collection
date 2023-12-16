@@ -18,8 +18,14 @@ words:
   - gitleaks
   - gitlint
   - hwinfo
+  - inet
   - insertafter
+  - kdiff3
+  - kget
+  - krename
+  - krusader
   - Kubuntu
+  - kwin
   - lineinfile
   - markdownlint
   - nftables
