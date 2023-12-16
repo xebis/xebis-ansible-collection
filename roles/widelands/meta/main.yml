@@ -1,0 +1,5 @@
+---
+dependencies:
+  - role: xebis.ansible.system # Expects updated and upgraded system
+  - role: xebis.ansible.firewall # Expects extensible nftables firewall
+  - role: xebis.ansible.flatpak # Expects Flatpak, updated and upgraded

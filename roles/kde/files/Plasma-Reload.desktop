@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment[en_US]=
+Comment=
+Exec=kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell
+GenericName[en_US]=
+GenericName=
+Icon=plasma
+MimeType=
+Name[en_US]=Plasma Reload
+Name=Plasma Reload
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

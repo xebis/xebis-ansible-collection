@@ -44,9 +44,16 @@ A collection of Xebis shared Ansible roles.
 | Role | Description | Documentation | Dependencies |
 |---|---|---|---|
 | [`xebis.ansible.system`](roles/system) | Well maintained operating system | Updates and upgrades `deb` packages including autoremove and autoclean, reboots the system (when necessary), provides `Reboot machine` handler |
-| [`xebis.ansible.system_management`](roles/system_management) | Operating system management essentials | Installs and set ups `at` | [`xebis.ansible.system`](roles/system) |
-| [`xebis.ansible.firewall`](roles/firewall) | Extensible nftables firewall | Installs `nftables` and sets up basic extensible nftables chains and rules, provides `Reload nftables` handler, see [README.md](roles/firewall/README.md) for usage, configuration, and examples | [`xebis.ansible.system`](roles/system) |
-| [`xebis.ansible.engineering`](roles/engineering) | Engineering essentials | Installs and set ups `direnv` | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.system_management`](roles/system_management) | Operating system management essentials | Installs and sets up `at` | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.firewall`](roles/firewall) | Extensible nftables firewall | Installs `nftables` and sets up basic extensible nftables chains and rules, provides `Reload nftables` handler, see [Firewall role README.md](roles/firewall/README.md) for usage, configuration, and examples | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.fail2ban`](roles/fail2ban) | Fail2ban service | Installs `fail2ban` and sets it up as a systemd service | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
+| [`xebis.ansible.iam`](roles/iam) | IAM | Creates user groups and users as regular users or admins, their public SSH keys, disables password remote logins, provides `Restart sshd` handler, see [IAM role README.md](roles/iam/README.md) for usage, configuration, and examples | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) [`xebis.ansible.fail2ban`](roles/fail2ban) |
+| [`xebis.ansible.flatpak`](roles/flatpak) | Well maintained Flatpak | Updates and upgrades `Flatpak` packages including removing unused ones | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.physical`](roles/physical) | Physical machine essentials | Installs `hwinfo`, sets up to show GRUB menu with 3s timeout, and sets up `/tmp` in tmpfs, provides `Update GRUB configuration` handler | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.engineering`](roles/engineering) | Engineering essentials | Installs and sets up `direnv` | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.kde`](roles/kde/) | KDE essentials | Installs `krusader` (including recommended dependencies `kdiff3`, `kget`, and `krename`), `kwin-bismuth`, sets up `nftables` firewall for KDE, and provides `Plasma Reload` desktop icon | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
+| [`xebis.ansible.openttd`](roles/openttd) | OpenTTD (transport simulation game) | Installs `OpenTTD` including `openttd-opensfx` | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.widelands`](roles/widelands) | Widelands (real-time strategy game) | Installs `Widelands` and setups firewall | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) [`xebis.ansible.flatpak`](roles/flatpak) |
 
 ### Supported OS
 
@@ -58,7 +65,7 @@ Install the collection using `ansible-galaxy collection install git@github.com/x
 
 ```yaml
 collections:
-  - git@github.com/xebis/xebis-ansible-collection.git
+  - name: git+https://github.com/xebis/xebis-ansible-collection.git,main
 ```
 
 ## Usage
@@ -69,6 +76,9 @@ In an Ansible playbook:
   roles:
     - role: xebis.ansible.role
 ```
+
+- [IAM usage, configuration, and examples](roles/iam/README.md)
+- [Firewall usage, configuration, and examples](roles/firewall/README.md)
 
 ## Contributing
 

@@ -1,0 +1,18 @@
+---
+- name: Add /tmp section separator to /etc/fstab
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/fstab
+    line: "# /tmp was a part of / during installation"
+    state: present
+
+- name: Move /tmp from disk to RAM (tmpfs)
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/fstab
+    regexp: ^\\s*tmpfs\\s+/tmp
+    line: tmpfs /tmp tmpfs rw,nosuid,nodev
+    insertafter: ^# /tmp was a part of / during installation
+    create: false
+    state: present
+  notify: Reboot machine

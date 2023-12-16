@@ -9,18 +9,40 @@ dictionaries:
 words:
   - autoremove
   - autoclean
+  - backrefs
   - Bružina
   - codespell
   - Coreutils
   - direnv
   - drawio
+  - flathub
+  - flatpak
+  - flatpakrepo
   - gitleaks
   - gitlint
+  - hwinfo
+  - inet
+  - insertafter
+  - kdiff3
+  - kget
+  - krename
+  - krusader
   - Kubuntu
+  - kwin
+  - lineinfile
   - markdownlint
   - nftables
+  - nodev
+  - nosuid
+  - opensfx
+  - openttd
+  - passwordless
   - Pylance
   - roadmap
   - shellib
+  - subelements
+  - sudoer
+  - tmpfs
+  - Widelands
   - Xebis
 flagWords: []

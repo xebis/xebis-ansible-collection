@@ -1,0 +1,8 @@
+---
+- name: Install OpenTTD deb packages
+  become: true
+  ansible.builtin.apt:
+    name:
+      - openttd
+      - openttd-opensfx
+    state: present
