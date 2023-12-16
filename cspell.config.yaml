@@ -15,7 +15,9 @@ words:
   - Coreutils
   - direnv
   - drawio
+  - flathub
   - flatpak
+  - flatpakrepo
   - gitleaks
   - gitlint
   - hwinfo
@@ -36,5 +38,6 @@ words:
   - roadmap
   - shellib
   - tmpfs
+  - Widelands
   - Xebis
 flagWords: []
