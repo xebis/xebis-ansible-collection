@@ -15,6 +15,7 @@ words:
   - Coreutils
   - direnv
   - drawio
+  - flatpak
   - gitleaks
   - gitlint
   - hwinfo
