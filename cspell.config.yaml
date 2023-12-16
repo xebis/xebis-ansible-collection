@@ -9,6 +9,7 @@ dictionaries:
 words:
   - autoremove
   - autoclean
+  - backrefs
   - Bružina
   - codespell
   - Coreutils
@@ -16,11 +17,17 @@ words:
   - drawio
   - gitleaks
   - gitlint
+  - hwinfo
+  - insertafter
   - Kubuntu
+  - lineinfile
   - markdownlint
   - nftables
+  - nodev
+  - nosuid
   - Pylance
   - roadmap
   - shellib
+  - tmpfs
   - Xebis
 flagWords: []

@@ -1,0 +1,3 @@
+---
+- name: Import GRUB handlers
+  ansible.builtin.import_tasks: grub.yml

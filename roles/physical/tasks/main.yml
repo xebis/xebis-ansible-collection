@@ -1,0 +1,13 @@
+---
+- name: Install physical machine deb packages
+  become: true
+  ansible.builtin.apt:
+    name:
+      - hwinfo
+    state: present
+
+- name: Import GRUB tasks
+  ansible.builtin.import_tasks: grub.yml
+
+- name: Import tmpfs tasks
+  ansible.builtin.import_tasks: tmpfs.yml

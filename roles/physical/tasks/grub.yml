@@ -1,0 +1,13 @@
+---
+- name: Show GRUB menu and set GRUB timeout
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/default/grub
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    backrefs: true
+    state: present
+  loop:
+    - { regexp: ^GRUB_TIMEOUT_STYLE=(.*), line: '#GRUB_TIMEOUT_STYLE=\1' }
+    - { regexp: ^GRUB_TIMEOUT=, line: GRUB_TIMEOUT=3 }
+  notify: Update GRUB configuration
