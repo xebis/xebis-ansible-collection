@@ -1,4 +1,4 @@
 ---
 dependencies:
-  - role: xebis.ansible.system
-  - role: xebis.ansible.firewall
+  - role: xebis.ansible.system # Expects updated and upgraded system
+  - role: xebis.ansible.firewall # Expects extensible nftables firewall
