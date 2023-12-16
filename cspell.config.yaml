@@ -34,6 +34,8 @@ words:
   - nftables
   - nodev
   - nosuid
+  - opensfx
+  - openttd
   - passwordless
   - Pylance
   - roadmap
