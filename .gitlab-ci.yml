@@ -27,6 +27,7 @@ variables:
     - source .venv/bin/activate
     - pip install -r requirements.txt
     - npm install -g markdownlint-cli
+    - ansible-galaxy collection install -r requirements.yml
   script:
     - pre-commit run -a --hook-stage manual
   cache:
