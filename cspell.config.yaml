@@ -34,9 +34,12 @@ words:
   - nftables
   - nodev
   - nosuid
+  - passwordless
   - Pylance
   - roadmap
   - shellib
+  - subelements
+  - sudoer
   - tmpfs
   - Widelands
   - Xebis
