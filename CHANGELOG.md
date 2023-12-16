@@ -1,3 +1,22 @@
+# [0.5.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.4.0...v0.5.0) (2023-12-16)
+
+
+### Bug Fixes
+
+* missing ansible.posix dependency ([bce2dd0](https://gitlab.com/xebis/xebis-ansible-collection/commit/bce2dd007aeab7d2255a728b5cf6efee1af2d6c0))
+* missing requirements yaml, setup and ci installation ([beecc63](https://gitlab.com/xebis/xebis-ansible-collection/commit/beecc63f350491999fee2164cae930dec8c52d38))
+
+
+### Features
+
+* add fail2ban role ([34f0b3e](https://gitlab.com/xebis/xebis-ansible-collection/commit/34f0b3e47ef28f9855dac6708a2bc21bd2b2dbbc))
+* add flatpak role ([8e78967](https://gitlab.com/xebis/xebis-ansible-collection/commit/8e78967e90224fc4c6cdf490bf9ddb92855d22b7))
+* add iam role ([a3e152e](https://gitlab.com/xebis/xebis-ansible-collection/commit/a3e152e991c68904c1d0d2b4ef3d6f2d68e4fa04))
+* add kde role ([7399b37](https://gitlab.com/xebis/xebis-ansible-collection/commit/7399b37002fa04956ad8359b902f8ea755ae8be6))
+* add openttd role ([c6e9727](https://gitlab.com/xebis/xebis-ansible-collection/commit/c6e97279d0e2018c8cfd2cd4ca08f044a77e3b0e))
+* add physical role ([ee54e35](https://gitlab.com/xebis/xebis-ansible-collection/commit/ee54e350083c54d5e925f73d77b0a22a1fa45c0f))
+* add widelands role ([a3b66f8](https://gitlab.com/xebis/xebis-ansible-collection/commit/a3b66f8e4ece6aa79f066017d22331de110af4a7))
+
 # [0.4.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.3.0...v0.4.0) (2023-12-9)
 
 
