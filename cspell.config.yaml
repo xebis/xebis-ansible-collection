@@ -7,11 +7,13 @@ dictionaries:
   - bash
   - words
 words:
-  - autoremove
   - autoclean
+  - autoremove
   - backrefs
   - Bružina
+  - buildx
   - codespell
+  - containerd
   - Coreutils
   - direnv
   - drawio

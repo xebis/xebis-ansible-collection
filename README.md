@@ -41,13 +41,14 @@ A collection of Xebis shared Ansible roles.
 
 ### Ansible Roles
 
-| Role | Description | Documentation | Dependencies |
-|---|---|---|---|
+| Role | Description | Documentation | Dependencies | |
+|---|---|---|---|---|
 | [`xebis.ansible.system`](roles/system) | Well maintained operating system | Updates and upgrades `deb` packages including autoremove and autoclean, reboots the system (when necessary), provides `Reboot machine` handler |
 | [`xebis.ansible.system_management`](roles/system_management) | Operating system management essentials | Installs and sets up `at` | [`xebis.ansible.system`](roles/system) |
 | [`xebis.ansible.firewall`](roles/firewall) | Extensible nftables firewall | Installs `nftables` and sets up basic extensible nftables chains and rules, provides `Reload nftables` handler, see [Firewall role README.md](roles/firewall/README.md) for usage, configuration, and examples | [`xebis.ansible.system`](roles/system) |
 | [`xebis.ansible.fail2ban`](roles/fail2ban) | Fail2ban service | Installs `fail2ban` and sets it up as a systemd service | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
 | [`xebis.ansible.iam`](roles/iam) | IAM | Creates user groups and users as regular users or admins, their public SSH keys, disables password remote logins, provides `Restart sshd` handler, see [IAM role README.md](roles/iam/README.md) for usage, configuration, and examples | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) [`xebis.ansible.fail2ban`](roles/fail2ban) |
+| [`xebis.ansible.docker`](roles/docker) | Docker essentials | Installs `docker-ce`, `docker-ce-cli`, `containerd.io`, `docker-buildx-plugin`, `docker-compose-plugin` from Docker apt repository, sets up `nftables` firewall for Docker **⚠ firewall rules are not production ready**, and prunes `builder cache`, `containers`, `images` including `non-dangling`, `networks` and `volumes` | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
 | [`xebis.ansible.flatpak`](roles/flatpak) | Well maintained Flatpak | Updates and upgrades `Flatpak` packages including removing unused ones | [`xebis.ansible.system`](roles/system) |
 | [`xebis.ansible.physical`](roles/physical) | Physical machine essentials | Installs `hwinfo`, sets up to show GRUB menu with 3s timeout, and sets up `/tmp` in tmpfs, provides `Update GRUB configuration` handler | [`xebis.ansible.system`](roles/system) |
 | [`xebis.ansible.engineering`](roles/engineering) | Engineering essentials | Installs and sets up `direnv` | [`xebis.ansible.system`](roles/system) |

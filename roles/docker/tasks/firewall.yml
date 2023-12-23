@@ -1,0 +1,11 @@
+---
+- name: Copy Docker firewall rules
+  become: true
+  ansible.builtin.copy:
+    src: inet-fwd-docker.conf
+    dest: /etc/nftables/inet-fwd-docker.conf
+    mode: u=rw,g=r,o=r
+  notify: Reload nftables
+
+- name: Enforce firewall reload now
+  ansible.builtin.meta: flush_handlers
