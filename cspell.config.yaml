@@ -15,8 +15,12 @@ words:
   - codespell
   - containerd
   - Coreutils
+  - darktable
+  - digikam
   - direnv
   - drawio
+  - exfat
+  - exfatprogs
   - flathub
   - flatpak
   - flatpakrepo
@@ -40,6 +44,7 @@ words:
   - openttd
   - passwordless
   - Pylance
+  - rawtherapee
   - roadmap
   - shellib
   - subelements

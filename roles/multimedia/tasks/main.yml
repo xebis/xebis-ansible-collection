@@ -1,0 +1,13 @@
+---
+- name: Install multimedia deb packages
+  become: true
+  ansible.builtin.apt:
+    name:
+      - audacity
+      - darktable
+      - digikam
+      - exfat-fuse
+      - exfatprogs
+      - gimp
+      - rawtherapee
+    state: present
