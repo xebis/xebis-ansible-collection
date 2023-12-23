@@ -1,0 +1,25 @@
+---
+- name: Install CLI Snap packages
+  become: true
+  community.general.snap:
+    name:
+      - starship
+    channel: edge
+    classic: true
+    state: present
+
+- name: Copy Starship configuration
+  ansible.builtin.copy:
+    src: starship.toml
+    dest: ~/starship.toml
+    mode: u=rw,g=r,o=r
+
+- name: Set up Starship
+  ansible.builtin.blockinfile:
+    path: ~/.bashrc
+    block: |
+      export STARSHIP_CONFIG=~/starship.toml
+      eval "$(starship init bash)"
+    marker: "# {mark} Starship configuration"
+    create: true
+    mode: u=rw,g=,o=
