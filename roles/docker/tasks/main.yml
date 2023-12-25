@@ -1,0 +1,40 @@
+---
+- name: Import firewall tasks
+  ansible.builtin.import_tasks: firewall.yml
+
+- name: Add Docker apt key
+  become: true
+  ansible.builtin.apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add Docker apt repository
+  become: true
+  ansible.builtin.apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
+    filename: docker
+    mode: u=rw,g=r,o=r
+    state: present
+
+- name: Install Docker deb packages
+  become: true
+  ansible.builtin.apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
+    state: present
+  when: not ansible_check_mode
+
+- name: Clean up Docker - Prune everything
+  become: true
+  community.docker.docker_prune:
+    builder_cache: true
+    containers: true
+    images: true
+    images_filters:
+      dangling: false
+    networks: true
+    volumes: true

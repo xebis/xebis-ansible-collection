@@ -7,14 +7,21 @@ dictionaries:
   - bash
   - words
 words:
-  - autoremove
   - autoclean
+  - autoremove
   - backrefs
+  - blockinfile
   - Bružina
+  - buildx
   - codespell
+  - containerd
   - Coreutils
+  - darktable
+  - digikam
   - direnv
   - drawio
+  - exfat
+  - exfatprogs
   - flathub
   - flatpak
   - flatpakrepo
@@ -37,12 +44,18 @@ words:
   - opensfx
   - openttd
   - passwordless
+  - powerline
+  - pyenv
   - Pylance
+  - rawtherapee
   - roadmap
   - shellib
   - subelements
   - sudoer
+  - tcsh
   - tmpfs
+  - virtualenv
   - Widelands
   - Xebis
+  - xonsh
 flagWords: []

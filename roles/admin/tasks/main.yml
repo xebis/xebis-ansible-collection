@@ -1,0 +1,11 @@
+---
+- name: Install admin deb packages
+  become: true
+  ansible.builtin.apt:
+    name:
+      - at
+      - curl
+      - htop
+      - mc
+      - screen
+    state: present

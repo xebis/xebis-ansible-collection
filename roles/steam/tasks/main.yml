@@ -1,0 +1,10 @@
+---
+- name: Import firewall tasks
+  ansible.builtin.import_tasks: firewall.yml
+
+- name: Install Steam deb packages
+  become: true
+  ansible.builtin.apt:
+    name:
+      - steam-installer
+    state: present
