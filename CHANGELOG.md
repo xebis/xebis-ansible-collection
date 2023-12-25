@@ -1,3 +1,14 @@
+# [0.6.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.5.0...v0.6.0) (2023-12-25)
+
+
+### Features
+
+* add docker role ([b59294d](https://gitlab.com/xebis/xebis-ansible-collection/commit/b59294d23dfc782cddb210f4f13fada188003af6))
+* add multimedia role ([a9645f5](https://gitlab.com/xebis/xebis-ansible-collection/commit/a9645f5c017b4411ae0d58f0f52008e2f0ed3cbb))
+* add starship role ([17e36b4](https://gitlab.com/xebis/xebis-ansible-collection/commit/17e36b45cd10004e147fc3d48ac61522b825eed3))
+* rename system_management to role admin and add basic admin tools ([1587813](https://gitlab.com/xebis/xebis-ansible-collection/commit/1587813a7a3c515f76838ac4fcb30a9a8c2f180f))
+* steam role ([e7d2794](https://gitlab.com/xebis/xebis-ansible-collection/commit/e7d27944a39155b9f35171948a7507c65463ce68))
+
 # [0.5.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.4.0...v0.5.0) (2023-12-16)
 
 
