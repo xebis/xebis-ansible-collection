@@ -1,7 +1,0 @@
----
-- name: Install system management deb packages
-  become: true
-  ansible.builtin.apt:
-    name:
-      - at
-    state: present
