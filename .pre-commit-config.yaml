@@ -40,7 +40,7 @@ repos:
       - id: git-dirty
       - id: protect-first-parent
       - id: script-must-have-extension
-        exclude: .*\.bats$
+        exclude: .*\.bats$|.*\.bash_aliases$
       - id: script-must-not-have-extension
   - repo: meta
     hooks:
