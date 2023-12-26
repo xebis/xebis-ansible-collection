@@ -1,3 +1,10 @@
+# [0.7.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.6.0...v0.7.0) (2023-12-26)
+
+
+### Features
+
+* add bash role ([ee7e967](https://gitlab.com/xebis/xebis-ansible-collection/commit/ee7e9671d728c7470b85ad2da7c05f548afed4f8))
+
 # [0.6.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.5.0...v0.6.0) (2023-12-25)
 
 
