@@ -57,6 +57,7 @@ A collection of Xebis shared Ansible roles.
 | [`xebis.ansible.engineering`](roles/engineering) | Engineering essentials | Installs and sets up `direnv` | [`xebis.ansible.system`](roles/system) |
 | [`xebis.ansible.kde`](roles/kde/) | KDE essentials | Installs `krusader` (including recommended dependencies `kdiff3`, `kget`, and `krename`), `kwin-bismuth`, sets up `nftables` firewall for KDE, and provides `Plasma Reload` desktop icon | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
 | [`xebis.ansible.multimedia`](roles/multimedia) | Multimedia essentials | Installs `audacity`, `darktable`, `digikam`, `exfat-fuse`, `exfatprogs`, `gimp`, and `rawtherapee` |[`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.slack`](roles/slack) | Slack | Installs `Slack` ||
 | [`xebis.ansible.steam`](roles/steam) | Steam | Installs `steam-installer` | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
 | [`xebis.ansible.openttd`](roles/openttd) | OpenTTD (transport simulation game) | Installs `OpenTTD` including `openttd-opensfx` | [`xebis.ansible.system`](roles/system) |
 | [`xebis.ansible.widelands`](roles/widelands) | Widelands (real-time strategy game) | Installs `Widelands` and setups firewall | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) [`xebis.ansible.flatpak`](roles/flatpak) |
