@@ -77,6 +77,18 @@ sudo watch -d -n 1 'nft list ruleset | grep counter\.*rejected' # Watch rejected
 
 ## Extending The Firewall
 
+### Temporary Rules and Chains
+
+Example:
+
+```shell
+sudo nft insert rule inet filter inet-out tcp dport 8080 accept
+```
+
+To get rid of temporary rules and chains run `sudo /etc/nftables.conf`, or reload nftables service, reboot, etc.
+
+### Permanent Rules and Chains
+
 To extend rules and chains in a hook:
 
 1. Put nftables files to `/etc/nftables/` directory, the file naming convention:
@@ -86,7 +98,7 @@ To extend rules and chains in a hook:
     - manually by the `sudo nft -c -f /etc/nftables.conf && sudo /etc/nftables.conf` command
     - in an Ansible role by calling `Revalidate and reload nftables` handler
 
-### Example of Rules Extension
+#### Example of Rules Extension
 
 In `inet-in-my-app.conf`:
 
@@ -94,7 +106,7 @@ In `inet-in-my-app.conf`:
 tcp dport 8080 counter accept # Allow testing HTTP traffic
 ```
 
-### Example of Using a Chain
+#### Example of Using a Chain
 
 The rules file should point traffic to a chain in `inet-in-my-app.conf`:
 
@@ -112,7 +124,7 @@ chain inet-in-my-app {
 }
 ```
 
-### Example of Use in a Role
+#### Example of Use in a Role
 
 Add a role dependency in `meta` file:
 
