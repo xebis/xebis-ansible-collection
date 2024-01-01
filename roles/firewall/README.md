@@ -2,7 +2,7 @@
 
 <!-- cSpell:ignore inet, igmp, icmpv6, ruleset, dport, Netfilter -->
 
-The role installs `nftables` and sets up basic extensible nftables chains and rules, provides `Reload nftables` handler.
+The role installs `nftables` and sets up basic extensible nftables chains and rules, provides `Revalidate and reload nftables` and `Reload nftables` handlers.
 
 ## Default Firewall Rules
 
@@ -82,9 +82,9 @@ To extend rules and chains in a hook:
 1. Put nftables files to `/etc/nftables/` directory, the file naming convention:
     - `hook-name.conf`, only `inet-in`, `inet-fwd`, and `inet-out` are currently processed
     - `chain-name.conf`, only `inet-chain` is currently processed
-2. Reload nftables ruleset
-    - manually by the `/etc/nftables.conf` command
-    - in an Ansible role by calling `Reload nftables` handler
+2. Revalidate and reload nftables ruleset
+    - manually by the `sudo nft -c -f /etc/nftables.conf && sudo /etc/nftables.conf` command
+    - in an Ansible role by calling `Revalidate and reload nftables` handler
 
 ### Example of Rules Extension
 
@@ -136,7 +136,7 @@ Add Ansible task to copy files to `/etc/nftables` and reload firewall rules, for
   with_items:
     - inet-in-role.conf
     - inet-out-role.conf
-  notify: Reload nftables
+  notify: Revalidate and reload nftables
 ```
 
 ## References

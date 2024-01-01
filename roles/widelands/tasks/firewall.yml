@@ -9,4 +9,4 @@
   with_items:
     - inet-in-widelands.conf
     - inet-out-widelands.conf
-  notify: Reload nftables
+  notify: Revalidate and reload nftables

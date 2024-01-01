@@ -5,7 +5,7 @@
     src: inet-fwd-docker.conf
     dest: /etc/nftables/inet-fwd-docker.conf
     mode: u=rw,g=r,o=r
-  notify: Reload nftables
+  notify: Revalidate and reload nftables
 
 - name: Enforce firewall reload now
   ansible.builtin.meta: flush_handlers
