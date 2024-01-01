@@ -24,6 +24,7 @@ A collection of Xebis shared Ansible roles.
   - [Supported OS](#supported-os)
 - [Installation and Configuration](#installation-and-configuration)
 - [Usage](#usage)
+  - [Caveats](#caveats)
 - [Contributing](#contributing)
   - [Development](#development)
   - [Testing](#testing)
@@ -84,6 +85,14 @@ In an Ansible playbook:
 
 - [IAM usage, configuration, and examples](roles/iam/README.md)
 - [Firewall usage, configuration, and examples](roles/firewall/README.md)
+
+### Caveats
+
+When a role is removed from a playbook, actions performed by the role are not reverted. This might lead to security risks and unexpected results, for example:
+
+- `xebis.ansible.iam` might leave users and their access on the system
+- `xebis.ansible.firewall` leaves firewall installed on the system
+- a role with dependency on `xebis.ansible.firewall` might leave unwanted firewall rules on the system
 
 ## Contributing
 
