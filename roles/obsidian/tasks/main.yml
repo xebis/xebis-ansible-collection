@@ -1,0 +1,7 @@
+---
+- name: Install Obsidian Snap package
+  become: true
+  community.general.snap:
+    name: obsidian
+    classic: true
+    state: present

@@ -1,8 +1,15 @@
 ---
+- name: Revalidate all nftables firewall rules
+  become: true
+  ansible.builtin.command:
+    cmd: nft -c -f /etc/nftables.conf
+  changed_when: true
+  listen: Revalidate and reload nftables
+  notify: Reload nftables
+
 - name: Reload all nftables firewall rules
   become: true
   ansible.builtin.command:
     cmd: /etc/nftables.conf
-  register: output
   changed_when: true
   listen: Reload nftables

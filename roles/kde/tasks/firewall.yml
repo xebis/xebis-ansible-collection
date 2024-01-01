@@ -8,4 +8,4 @@
   with_items:
     - inet-in-desktop.conf
     - inet-out-desktop.conf
-  notify: Reload nftables
+  notify: Revalidate and reload nftables

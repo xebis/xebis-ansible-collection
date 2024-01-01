@@ -1,0 +1,8 @@
+---
+- name: Copy Thunderbird firewall rules
+  become: true
+  ansible.builtin.copy:
+    src: inet-out-thunderbird.conf
+    dest: /etc/nftables/inet-out-thunderbird.conf
+    mode: u=rw,g=r,o=r
+  notify: Revalidate and reload nftables

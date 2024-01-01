@@ -1,5 +1,6 @@
 ---
+profile: production
 exclude_paths:
   - tests/
 skip_list:
-  - galaxy[version-incorrect] # Until the version is less than 1.0.0
+  - galaxy[version-incorrect] # Until the version is 1.0.0

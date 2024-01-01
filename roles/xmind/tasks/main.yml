@@ -1,0 +1,7 @@
+---
+- name: Install Xmind flatpak package
+  community.general.flatpak:
+    name: net.xmind.XMind
+    method: user
+    state: present
+  when: not ansible_check_mode

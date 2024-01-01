@@ -9,4 +9,4 @@
   with_items:
     - inet-in-steam.conf
     - inet-out-steam.conf
-  notify: Reload nftables
+  notify: Revalidate and reload nftables

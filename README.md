@@ -24,6 +24,7 @@ A collection of Xebis shared Ansible roles.
   - [Supported OS](#supported-os)
 - [Installation and Configuration](#installation-and-configuration)
 - [Usage](#usage)
+  - [Caveats](#caveats)
 - [Contributing](#contributing)
   - [Development](#development)
   - [Testing](#testing)
@@ -44,7 +45,7 @@ A collection of Xebis shared Ansible roles.
 | Role | Description | Documentation | Dependencies | |
 |---|---|---|---|---|
 | [`xebis.ansible.system`](roles/system) | Well maintained operating system | Updates and upgrades `deb` packages including autoremove and autoclean, reboots the system (when necessary), provides `Reboot machine` handler |
-| [`xebis.ansible.firewall`](roles/firewall) | Extensible nftables firewall | Installs `nftables` and sets up basic extensible nftables chains and rules, provides `Reload nftables` handler, see [Firewall role README.md](roles/firewall/README.md) for usage, configuration, and examples | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.firewall`](roles/firewall) | Extensible nftables firewall | Installs `nftables` and sets up basic extensible nftables chains and rules, provides `Revalidate and reload nftables` and `Reload nftables` handlers, see [Firewall role README.md](roles/firewall/README.md) for usage, configuration, and examples | [`xebis.ansible.system`](roles/system) |
 | [`xebis.ansible.fail2ban`](roles/fail2ban) | Fail2ban service | Installs `fail2ban` and sets it up as a systemd service | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
 | [`xebis.ansible.iam`](roles/iam) | IAM | Creates user groups and users as regular users or admins, their public SSH keys, disables password remote logins, provides `Restart sshd` handler, see [IAM role README.md](roles/iam/README.md) for usage, configuration, and examples | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) [`xebis.ansible.fail2ban`](roles/fail2ban) |
 | [`xebis.ansible.bash`](roles/bash) | Extensible Bash | Installs `~/.bash_aliases` and sets up basic extensible Bash aliases, see [Bash role README.md](roles/bash/README.md) for usage, configuration, and examples | [`xebis.ansible.system`](roles/system) |
@@ -56,6 +57,10 @@ A collection of Xebis shared Ansible roles.
 | [`xebis.ansible.engineering`](roles/engineering) | Engineering essentials | Installs and sets up `direnv` | [`xebis.ansible.system`](roles/system) |
 | [`xebis.ansible.kde`](roles/kde/) | KDE essentials | Installs `krusader` (including recommended dependencies `kdiff3`, `kget`, and `krename`), `kwin-bismuth`, sets up `nftables` firewall for KDE, and provides `Plasma Reload` desktop icon | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
 | [`xebis.ansible.multimedia`](roles/multimedia) | Multimedia essentials | Installs `audacity`, `darktable`, `digikam`, `exfat-fuse`, `exfatprogs`, `gimp`, and `rawtherapee` |[`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.slack`](roles/slack) | Slack | Installs `slack` ||
+| [`xebis.ansible.thunderbird`](roles/thunderbird) | Thunderbird | Installs `thunderbird` and sets up `nftables` firewall for Thunderbird | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
+| [`xebis.ansible.obsidian`](roles/xmind) | Obsidian | Installs `obsidian` ||
+| [`xebis.ansible.xmind`](roles/xmind) | Xmind | Installs `xmind` | [`xebis.ansible.flatpak`](roles/flatpak) |
 | [`xebis.ansible.steam`](roles/steam) | Steam | Installs `steam-installer` | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
 | [`xebis.ansible.openttd`](roles/openttd) | OpenTTD (transport simulation game) | Installs `OpenTTD` including `openttd-opensfx` | [`xebis.ansible.system`](roles/system) |
 | [`xebis.ansible.widelands`](roles/widelands) | Widelands (real-time strategy game) | Installs `Widelands` and setups firewall | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) [`xebis.ansible.flatpak`](roles/flatpak) |
@@ -84,6 +89,14 @@ In an Ansible playbook:
 
 - [IAM usage, configuration, and examples](roles/iam/README.md)
 - [Firewall usage, configuration, and examples](roles/firewall/README.md)
+
+### Caveats
+
+When a role is removed from a playbook, actions performed by the role are not reverted. This might lead to security risks and unexpected results, for example:
+
+- `xebis.ansible.iam` might leave users and their access on the system
+- `xebis.ansible.firewall` leaves firewall installed on the system
+- a role with dependency on `xebis.ansible.firewall` might leave unwanted firewall rules on the system
 
 ## Contributing
 

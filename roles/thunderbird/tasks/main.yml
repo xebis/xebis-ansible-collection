@@ -1,0 +1,10 @@
+---
+- name: Import firewall tasks
+  ansible.builtin.import_tasks: firewall.yml
+
+- name: Install Thunderbird deb packages
+  become: true
+  ansible.builtin.apt:
+    name:
+      - thunderbird
+    state: present

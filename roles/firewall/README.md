@@ -2,7 +2,7 @@
 
 <!-- cSpell:ignore inet, igmp, icmpv6, ruleset, dport, Netfilter -->
 
-The role installs `nftables` and sets up basic extensible nftables chains and rules, provides `Reload nftables` handler.
+The role installs `nftables` and sets up basic extensible nftables chains and rules, provides `Revalidate and reload nftables` and `Reload nftables` handlers.
 
 ## Default Firewall Rules
 
@@ -77,16 +77,28 @@ sudo watch -d -n 1 'nft list ruleset | grep counter\.*rejected' # Watch rejected
 
 ## Extending The Firewall
 
+### Temporary Rules and Chains
+
+Example:
+
+```shell
+sudo nft insert rule inet filter inet-out tcp dport 8080 accept
+```
+
+To get rid of temporary rules and chains run `sudo /etc/nftables.conf`, or reload nftables service, reboot, etc.
+
+### Permanent Rules and Chains
+
 To extend rules and chains in a hook:
 
 1. Put nftables files to `/etc/nftables/` directory, the file naming convention:
     - `hook-name.conf`, only `inet-in`, `inet-fwd`, and `inet-out` are currently processed
     - `chain-name.conf`, only `inet-chain` is currently processed
-2. Reload nftables ruleset
-    - manually by the `/etc/nftables.conf` command
-    - in an Ansible role by calling `Reload nftables` handler
+2. Revalidate and reload nftables ruleset
+    - manually by the `sudo nft -c -f /etc/nftables.conf && sudo /etc/nftables.conf` command
+    - in an Ansible role by calling `Revalidate and reload nftables` handler
 
-### Example of Rules Extension
+#### Example of Rules Extension
 
 In `inet-in-my-app.conf`:
 
@@ -94,7 +106,7 @@ In `inet-in-my-app.conf`:
 tcp dport 8080 counter accept # Allow testing HTTP traffic
 ```
 
-### Example of Using a Chain
+#### Example of Using a Chain
 
 The rules file should point traffic to a chain in `inet-in-my-app.conf`:
 
@@ -112,7 +124,7 @@ chain inet-in-my-app {
 }
 ```
 
-### Example of Use in a Role
+#### Example of Use in a Role
 
 Add a role dependency in `meta` file:
 
@@ -136,7 +148,7 @@ Add Ansible task to copy files to `/etc/nftables` and reload firewall rules, for
   with_items:
     - inet-in-role.conf
     - inet-out-role.conf
-  notify: Reload nftables
+  notify: Revalidate and reload nftables
 ```
 
 ## References

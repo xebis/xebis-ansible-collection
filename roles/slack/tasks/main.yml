@@ -1,0 +1,7 @@
+---
+- name: Install Slack Snap package
+  become: true
+  community.general.snap:
+    name: slack
+    classic: true
+    state: present
