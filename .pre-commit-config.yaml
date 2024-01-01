@@ -102,3 +102,5 @@ repos:
     rev: 3.1.50
     hooks:
       - id: checkov
+        args: [--skip-path, /tests/helpers, --skip-path, /scripts/shellib]
+        files: .*
