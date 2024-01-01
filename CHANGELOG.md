@@ -1,3 +1,21 @@
+# [0.8.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.7.0...v0.8.0) (2024-1-1)
+
+
+### Bug Fixes
+
+* setup should install dependencies from a file, not a list ([31b3741](https://gitlab.com/xebis/xebis-ansible-collection/commit/31b3741dd7699ba862033d69377f315cadeb73ca))
+
+
+### Features
+
+* add checkov secrets pre-commit hook ([b9e9f02](https://gitlab.com/xebis/xebis-ansible-collection/commit/b9e9f02f096593a4a7c6ad3eacf63bb1a197f6ce))
+* add firewall role revalidate and reload handler ([d667a5b](https://gitlab.com/xebis/xebis-ansible-collection/commit/d667a5b846746640c56e0de4e75c09e12ff53811))
+* add obsidian role ([d81d9fd](https://gitlab.com/xebis/xebis-ansible-collection/commit/d81d9fdf4d6cd44a9b2e96c522270ba9bcdab1dd))
+* add slack role ([ac7084c](https://gitlab.com/xebis/xebis-ansible-collection/commit/ac7084c89c2b392f3966dfda3d4636fd52e6cc9b))
+* add thunderbird role ([8657c3a](https://gitlab.com/xebis/xebis-ansible-collection/commit/8657c3abb5ceda290c35e2574e4c3e04df26e7db))
+* add xmind role ([523c765](https://gitlab.com/xebis/xebis-ansible-collection/commit/523c765f8d8b750e7478419a426eace7cc0d6823))
+* run checkov without terraform files ([b6eeacf](https://gitlab.com/xebis/xebis-ansible-collection/commit/b6eeacf73c65bed13cd07a7bf2a17bfd6b620b25))
+
 # [0.7.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.6.0...v0.7.0) (2023-12-26)
 
 
