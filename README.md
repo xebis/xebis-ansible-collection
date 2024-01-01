@@ -59,6 +59,7 @@ A collection of Xebis shared Ansible roles.
 | [`xebis.ansible.multimedia`](roles/multimedia) | Multimedia essentials | Installs `audacity`, `darktable`, `digikam`, `exfat-fuse`, `exfatprogs`, `gimp`, and `rawtherapee` |[`xebis.ansible.system`](roles/system) |
 | [`xebis.ansible.slack`](roles/slack) | Slack | Installs `slack` ||
 | [`xebis.ansible.thunderbird`](roles/thunderbird) | Thunderbird | Installs `thunderbird` and sets up `nftables` firewall for Thunderbird | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
+| [`xebis.ansible.obsidian`](roles/xmind) | Obsidian | Installs `obsidian` ||
 | [`xebis.ansible.xmind`](roles/xmind) | Xmind | Installs `xmind` | [`xebis.ansible.flatpak`](roles/flatpak) |
 | [`xebis.ansible.steam`](roles/steam) | Steam | Installs `steam-installer` | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
 | [`xebis.ansible.openttd`](roles/openttd) | OpenTTD (transport simulation game) | Installs `OpenTTD` including `openttd-opensfx` | [`xebis.ansible.system`](roles/system) |
