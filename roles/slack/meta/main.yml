@@ -1,0 +1,3 @@
+---
+dependencies:
+  - role: xebis.ansible.snapd # Expects updated and upgraded snaps
