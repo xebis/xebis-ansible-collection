@@ -1,3 +1,10 @@
+# [0.9.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.8.0...v0.9.0) (2024-1-6)
+
+
+### Features
+
+* add snapd role ([dbb2013](https://gitlab.com/xebis/xebis-ansible-collection/commit/dbb201389c28391297dd22d430e3c6f680d96d99))
+
 # [0.8.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.7.0...v0.8.0) (2024-1-1)
 
 
