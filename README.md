@@ -50,16 +50,17 @@ A collection of Xebis shared Ansible roles.
 | [`xebis.ansible.iam`](roles/iam) | IAM | Creates user groups and users as regular users or admins, their public SSH keys, disables password remote logins, provides `Restart sshd` handler, see [IAM role README.md](roles/iam/README.md) for usage, configuration, and examples | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) [`xebis.ansible.fail2ban`](roles/fail2ban) |
 | [`xebis.ansible.bash`](roles/bash) | Extensible Bash | Installs `~/.bash_aliases` and sets up basic extensible Bash aliases, see [Bash role README.md](roles/bash/README.md) for usage, configuration, and examples | [`xebis.ansible.system`](roles/system) |
 | [`xebis.ansible.admin`](roles/admin) | Administration essentials | Installs and sets up `at`, `curl`, `htop`, `mc`, `screen` | [`xebis.ansible.system`](roles/system) |
-| [`xebis.ansible.starship`](roles/starship) | Starship CLI prompt | Installs `starship` and sets up improved PowerLine configuration | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.snapd`](roles/snapd) | Snap daemon | Installs `snapd` and sets it up | [`xebis.ansible.system`](roles/system) |
+| [`xebis.ansible.starship`](roles/starship) | Starship CLI prompt | Installs `starship` and sets up improved PowerLine configuration | [`xebis.ansible.snapd`](roles/snapd) |
 | [`xebis.ansible.docker`](roles/docker) | Docker essentials | Installs `docker-ce`, `docker-ce-cli`, `containerd.io`, `docker-buildx-plugin`, `docker-compose-plugin` from Docker apt repository, sets up `nftables` firewall for Docker **⚠ firewall rules are not production ready**, and prunes `builder cache`, `containers`, `images` including `non-dangling`, `networks` and `volumes` | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
 | [`xebis.ansible.flatpak`](roles/flatpak) | Well maintained Flatpak | Updates and upgrades `Flatpak` packages including removing unused ones | [`xebis.ansible.system`](roles/system) |
 | [`xebis.ansible.physical`](roles/physical) | Physical machine essentials | Installs `hwinfo`, sets up to show GRUB menu with 3s timeout, and sets up `/tmp` in tmpfs, provides `Update GRUB configuration` handler | [`xebis.ansible.system`](roles/system) |
 | [`xebis.ansible.engineering`](roles/engineering) | Engineering essentials | Installs and sets up `direnv` | [`xebis.ansible.system`](roles/system) |
 | [`xebis.ansible.kde`](roles/kde/) | KDE essentials | Installs `krusader` (including recommended dependencies `kdiff3`, `kget`, and `krename`), `kwin-bismuth`, sets up `nftables` firewall for KDE, and provides `Plasma Reload` desktop icon | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
 | [`xebis.ansible.multimedia`](roles/multimedia) | Multimedia essentials | Installs `audacity`, `darktable`, `digikam`, `exfat-fuse`, `exfatprogs`, `gimp`, and `rawtherapee` |[`xebis.ansible.system`](roles/system) |
-| [`xebis.ansible.slack`](roles/slack) | Slack | Installs `slack` ||
+| [`xebis.ansible.slack`](roles/slack) | Slack | Installs `slack` | [`xebis.ansible.snapd`](roles/snapd) |
 | [`xebis.ansible.thunderbird`](roles/thunderbird) | Thunderbird | Installs `thunderbird` and sets up `nftables` firewall for Thunderbird | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
-| [`xebis.ansible.obsidian`](roles/xmind) | Obsidian | Installs `obsidian` ||
+| [`xebis.ansible.obsidian`](roles/xmind) | Obsidian | Installs `obsidian` | [`xebis.ansible.snapd`](roles/snapd) |
 | [`xebis.ansible.xmind`](roles/xmind) | Xmind | Installs `xmind` | [`xebis.ansible.flatpak`](roles/flatpak) |
 | [`xebis.ansible.steam`](roles/steam) | Steam | Installs `steam-installer` | [`xebis.ansible.system`](roles/system) [`xebis.ansible.firewall`](roles/firewall) |
 | [`xebis.ansible.openttd`](roles/openttd) | OpenTTD (transport simulation game) | Installs `OpenTTD` including `openttd-opensfx` | [`xebis.ansible.system`](roles/system) |

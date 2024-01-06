@@ -1,0 +1,7 @@
+---
+- name: Install Snap daemon deb packages
+  become: true
+  ansible.builtin.apt:
+    name:
+      - snapd
+    state: present
