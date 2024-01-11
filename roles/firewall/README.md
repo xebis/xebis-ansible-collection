@@ -13,7 +13,7 @@ Current nftables hooks used:
 _Inspired by the image [nftables wiki: Netfilter hooks](https://wiki.nftables.org/wiki-nftables/index.php/Netfilter_hooks)._
 
 - Each rule has counter set
-- When `nftables_log_rejected` is defined and true, all rejected packets are logged in the syslog prefixed `nftables` _`chain`_ `rejected`, default is false, see [Rejected Packets Logging](#rejected-packets-logging)
+- When `firewall_log_rejected` is defined and true, all rejected packets are logged in the syslog prefixed `nftables` _`chain`_ `rejected`, default is false, see [Rejected Packets Logging](#rejected-packets-logging)
 - `inet-pre`
   - Drops invalid packets and packets for localhost originating out of the loopback interface
   - Accepts the rest
@@ -23,13 +23,13 @@ _Inspired by the image [nftables wiki: Netfilter hooks](https://wiki.nftables.or
   - Accepts TCP SSH
   - Includes `/etc/nftables/inet-in-*.conf` extension rules, see [Extending The Firewall](#extending-the-firewall)
   - Rejects the rest
-  - Sets rejected packets logging to syslog when Ansible variable `nftables_log_rejected` is defined and true with prefix `nftables inet-in rejected`
+  - Sets rejected packets logging to syslog when Ansible variable `firewall_log_rejected` is defined and true with prefix `nftables inet-in rejected`
 - `inet-fwd`
   - Accepts established, related traffic
   - Accepts icmp, igmp, and icmpv6 packets
   - Includes `/etc/nftables/inet-fwd-*.conf` extension rules, see [Extending The Firewall](#extending-the-firewall)
   - Rejects the rest
-  - Sets rejected packets logging to syslog when Ansible variable `nftables_log_rejected` is defined and true with prefix `nftables inet-fwd rejected`
+  - Sets rejected packets logging to syslog when Ansible variable `firewall_log_rejected` is defined and true with prefix `nftables inet-fwd rejected`
 - `inet-out`
   - Accepts established, related, and loopback traffic
   - Accepts icmp, igmp, and icmpv6 packets
@@ -38,7 +38,7 @@ _Inspired by the image [nftables wiki: Netfilter hooks](https://wiki.nftables.or
   - Accepts TCP SSH, HTTP, HTTPS
   - Includes `/etc/nftables/inet-out-*.conf` extension rules, see [Extending The Firewall](#extending-the-firewall)
   - Rejects the rest
-  - Sets rejected packets logging to syslog when Ansible variable `nftables_log_rejected` is defined and true with prefix `nftables inet-out rejected`
+  - Sets rejected packets logging to syslog when Ansible variable `firewall_log_rejected` is defined and true with prefix `nftables inet-out rejected`
 - `inet-post`
   - Drops invalid packets and packets for localhost ending out of the loopback interface
   - Accepts the rest
@@ -46,7 +46,7 @@ _Inspired by the image [nftables wiki: Netfilter hooks](https://wiki.nftables.or
 
 ### Rejected Packets Logging
 
-Example of `inventory.yml` defining `nftables_log_rejected` and setting it true:
+Example of `inventory.yml` defining `firewall_log_rejected` and setting it true:
 
 ```yaml
 all:
@@ -54,7 +54,7 @@ all:
 
 # In an inventory group or for a machine:
   vars:
-    nftables_log_rejected: true
+    firewall_log_rejected: true
 ```
 
 Example of using live tail:
