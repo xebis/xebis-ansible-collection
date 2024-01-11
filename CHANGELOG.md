@@ -1,3 +1,10 @@
+## [0.9.1](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.9.0...v0.9.1) (2024-1-11)
+
+
+### Bug Fixes
+
+* firewall log rejected packets variable should have role prefix ([959e1b5](https://gitlab.com/xebis/xebis-ansible-collection/commit/959e1b530f55479a755049629020059ea83ba8cc))
+
 # [0.9.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.8.0...v0.9.0) (2024-1-6)
 
 
