@@ -20,7 +20,7 @@ table inet filter {
         ip6 nexthdr icmpv6 counter limit rate 10/second accept
         tcp dport 22 counter accept # Allow SSH traffic
         include "/etc/nftables/inet-in-*.conf" # Include roles rules
-        counter {% if nftables_log_rejected is defined and nftables_log_rejected %}log prefix "nftables inet-in rejected " {% endif %}reject with icmpx type port-unreachable # Reject
+        counter {% if firewall_log_rejected is defined and firewall_log_rejected %}log prefix "nftables inet-in rejected " {% endif %}reject with icmpx type port-unreachable # Reject
     }
 
     chain inet-fwd {
@@ -30,7 +30,7 @@ table inet filter {
         ip protocol igmp counter accept
         ip6 nexthdr icmpv6 counter accept
         include "/etc/nftables/inet-fwd-*.conf" # Include roles rules
-        counter {% if nftables_log_rejected is defined and nftables_log_rejected %}log prefix "nftables inet-fwd rejected " {% endif %}reject with icmpx type host-unreachable # Reject
+        counter {% if firewall_log_rejected is defined and firewall_log_rejected %}log prefix "nftables inet-fwd rejected " {% endif %}reject with icmpx type host-unreachable # Reject
     }
 
     chain inet-out {
@@ -47,7 +47,7 @@ table inet filter {
         tcp dport 443 counter accept # Allow HTTPS traffic
         tcp dport 22 counter accept # Allow SSH traffic
         include "/etc/nftables/inet-out-*.conf" # Include roles rules
-        counter {% if nftables_log_rejected is defined and nftables_log_rejected %}log prefix "nftables inet-out rejected " {% endif %}reject with icmpx type admin-prohibited # Reject
+        counter {% if firewall_log_rejected is defined and firewall_log_rejected %}log prefix "nftables inet-out rejected " {% endif %}reject with icmpx type admin-prohibited # Reject
     }
 
     chain inet-post {
