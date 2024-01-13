@@ -1,3 +1,10 @@
+## [0.9.3](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.9.2...v0.9.3) (2024-1-13)
+
+
+### Bug Fixes
+
+* nftables rules fail when set up first time ([4baa6ea](https://gitlab.com/xebis/xebis-ansible-collection/commit/4baa6ea475303ec3e5b7781a2cdf8836d96a8c07))
+
 ## [0.9.2](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.9.1...v0.9.2) (2024-1-13)
 
 
