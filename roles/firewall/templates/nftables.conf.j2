@@ -1,6 +1,7 @@
 #!/usr/sbin/nft -f
 
-flush table inet filter
+table inet filter
+delete table inet filter
 
 table inet filter {
     chain inet-pre {
