@@ -1,6 +1,6 @@
 #!/usr/sbin/nft -f
 
-flush ruleset
+flush table inet filter
 
 table inet filter {
     chain inet-pre {
