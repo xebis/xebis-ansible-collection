@@ -1,3 +1,10 @@
+## [0.9.2](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.9.1...v0.9.2) (2024-1-13)
+
+
+### Bug Fixes
+
+* nftables should flush only own rules ([aad1aac](https://gitlab.com/xebis/xebis-ansible-collection/commit/aad1aac49a92769f58f46d2611dd9c2a7adaefd9))
+
 ## [0.9.1](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.9.0...v0.9.1) (2024-1-11)
 
 
