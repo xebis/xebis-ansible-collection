@@ -1,3 +1,10 @@
+# [0.10.0](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.9.3...v0.10.0) (2024-1-21)
+
+
+### Features
+
+* **firewall:** add files for manual additional rules ad chains ([baa63bf](https://gitlab.com/xebis/xebis-ansible-collection/commit/baa63bff89b451c75533affcb2cbe0e252ac7104))
+
 ## [0.9.3](https://gitlab.com/xebis/xebis-ansible-collection/compare/v0.9.2...v0.9.3) (2024-1-13)
 
 

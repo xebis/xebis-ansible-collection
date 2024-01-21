@@ -1,7 +1,7 @@
 ---
 namespace: xebis
 name: ansible
-version: 0.9.3
+version: 0.10.0
 readme: README.md
 authors:
   - Martin Bružina <https://bruzina.cz/>
