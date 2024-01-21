@@ -91,9 +91,10 @@ To get rid of temporary rules and chains run `sudo /etc/nftables.conf`, or reloa
 
 To extend rules and chains in a hook:
 
-1. Put nftables files to `/etc/nftables/` directory, the file naming convention:
-    - `hook-name.conf`, only `inet-in`, `inet-fwd`, and `inet-out` are currently processed
-    - `chain-name.conf`, only `inet-chain` is currently processed
+1. Put additional nftables rules to /`etc/nftables/inet-*-manual.conf` and chains to `/etc/nftables/inet-chain-manual.conf`
+   - Alternatively you can create your own files in `/etc/nftables/` directory, the file naming convention is:
+     - `hook-name.conf`, only `inet-in`, `inet-fwd`, and `inet-out` are currently processed
+     - `chain-name.conf`, only `inet-chain` is currently processed
 2. Revalidate and reload nftables ruleset
     - manually by the `sudo nft -c -f /etc/nftables.conf && sudo /etc/nftables.conf` command
     - in an Ansible role by calling `Revalidate and reload nftables` handler
