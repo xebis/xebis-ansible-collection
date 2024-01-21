@@ -68,11 +68,12 @@ sudo tail -f /var/log/syslog | grep 'nftables inet-in rejected'
 With installed `xebis.ansible.firewall` role:
 
 ```shell
-sudo nft flush ruleset # Flush all rules
+sudo nft flush ruleset # Flush all rules, including those created outside of the role and by 3rd party software (Docker, Kubernetes)
+sudo nft delete table inet filter # Flush all rules in table inet filter
 
 sudo /etc/nftables.conf # Reload all rules
 
-sudo watch -d -n 1 'nft list ruleset | grep counter\.*rejected' # Watch rejected packets and bytes counters
+sudo watch -d -n 1 'nft list ruleset | grep "\(reject\|drop\)"' # Watch rejected packets and bytes counters
 ```
 
 ## Extending The Firewall
@@ -91,9 +92,10 @@ To get rid of temporary rules and chains run `sudo /etc/nftables.conf`, or reloa
 
 To extend rules and chains in a hook:
 
-1. Put nftables files to `/etc/nftables/` directory, the file naming convention:
-    - `hook-name.conf`, only `inet-in`, `inet-fwd`, and `inet-out` are currently processed
-    - `chain-name.conf`, only `inet-chain` is currently processed
+1. Put additional nftables rules to /`etc/nftables/inet-*-manual.conf` and chains to `/etc/nftables/inet-chain-manual.conf`
+   - Alternatively you can create your own files in `/etc/nftables/` directory, the file naming convention is:
+     - `hook-name.conf`, only `inet-in`, `inet-fwd`, and `inet-out` are currently processed
+     - `chain-name.conf`, only `inet-chain` is currently processed
 2. Revalidate and reload nftables ruleset
     - manually by the `sudo nft -c -f /etc/nftables.conf && sudo /etc/nftables.conf` command
     - in an Ansible role by calling `Revalidate and reload nftables` handler

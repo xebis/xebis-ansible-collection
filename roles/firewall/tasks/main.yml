@@ -21,6 +21,20 @@
     validate: nft -c -f %s
   notify: Revalidate and reload nftables
 
+- name: Copy manual firewall rules files
+  become: true
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: /etc/nftables/{{ item }}
+    force: false
+    mode: u=rwx,g=rx,o=rx
+    state: present
+  with_items:
+    - inet-in-manual.conf
+    - inet-fwd-manual.conf
+    - inet-out-manual.conf
+    - inet-chain-manual.conf
+
 - name: Start and enable nftables service
   become: true
   ansible.builtin.systemd:
