@@ -68,11 +68,12 @@ sudo tail -f /var/log/syslog | grep 'nftables inet-in rejected'
 With installed `xebis.ansible.firewall` role:
 
 ```shell
-sudo nft flush ruleset # Flush all rules
+sudo nft flush ruleset # Flush all rules, including those created outside of the role and by 3rd party software (Docker, Kubernetes)
+sudo nft delete table inet filter # Flush all rules in table inet filter
 
 sudo /etc/nftables.conf # Reload all rules
 
-sudo watch -d -n 1 'nft list ruleset | grep counter\.*rejected' # Watch rejected packets and bytes counters
+sudo watch -d -n 1 'nft list ruleset | grep "\(reject\|drop\)"' # Watch rejected packets and bytes counters
 ```
 
 ## Extending The Firewall
